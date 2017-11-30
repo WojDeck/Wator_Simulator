@@ -1,0 +1,86 @@
+#include <SFML/Graphics.hpp>
+
+
+
+int main()
+{
+  
+  char GridSize[GridSizeHeight][GridSizeWidth];
+  int NumShark = 5;
+  int NumFish = 10;
+  int x;
+  int y;
+
+  sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!");
+  // Set Frame Rate to 60fps
+  srand(time(0));
+    window.setFramerateLimit(60);
+    sf::CircleShape shark(5);
+    shark.setFillColor(sf::Color(sf::Color::Red));
+    sf::CircleShape fish(1);
+    fish.setFillColor(sf::Color(sf::Color::Blue));
+    std::vector<sf::CircleShape> Sharks(NumShark,sf::CircleShape(shark));
+    void Sharks()
+    {
+      for (int i = 0; i < NumShark; i++)
+	{
+	  x = (int) random() % 10;
+	  y = (int) random() % 10;
+	  GridSize[x][y] = 'f';
+	  GridSize[x][y] = '0';
+	}
+    }
+    void Fishs()
+    {
+      for(int i=0; i < NumFish; i++)
+	{
+	  x = (int) random() % 10;
+	  y = (int) random() % 10;
+	  GridSize[x][y] = 'S';
+	  GridSize[x][y] = '0';
+	}
+    }
+    void SpawnFishAndShark()
+    {
+      Sharks();
+      Fish();
+    }
+    void displaOcean()
+    {
+      for(int i = 0; i < GridSizex; i++)
+	{
+	for(int j = 0; j < GridSizey; j++)
+	  {
+	    std::cout << ocean[i][j];
+	  }
+	}
+    }
+	     
+    // run the program as long as the window is open
+    while (window.isOpen())
+    {
+        // check all the window's events that were triggered since the last iteration of the loop
+      sf::Event event;
+        while (window.pollEvent(event))
+	  {
+            // "close requested" event: we close the window
+	  if (event.type == sf::Event::Closed)
+                window.close();
+        }
+
+	    Sharks[NumShark].setPosition(x, y+=1);
+            Sharks[NumShark].rotate(1);
+
+            // clear the window with black color
+            window.clear(sf::Color::Black);
+
+            // draw everything here...
+            // window.draw(...);
+            window.draw(Sharks(NumShark);
+
+            // end the current frame
+            window.display();
+        }
+
+        return 0;
+}
