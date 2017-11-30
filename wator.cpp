@@ -5,7 +5,9 @@ int x;
 int y;
 int main()
 {
-
+  int n;
+int x;
+int y;
  sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!");
   
     window.setFramerateLimit(30);

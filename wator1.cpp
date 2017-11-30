@@ -4,7 +4,7 @@
 
 int main()
 {
-  int n;
+  int n = 10;
   int x;
   int y;
 
@@ -13,14 +13,13 @@ int main()
     window.setFramerateLimit(60);
 
     srand(time(0));
-
     sf::Texture shark;
     shark.loadFromFile("image.png");
     std::vector<sf::Sprite> Fishes(n,sf::Sprite(shark));
     for (int n = 0; n < Fishes.size(); n++){
         Fishes[n].setOrigin(15, 15);
         Fishes[n].getPosition();
-        Fishes[n].setPosition(x = rand() % 790 + 10, y = rand() % -10 - 50);
+        Fishes[n].setPosition(x = (int) rand() % 10 , y = (int) rand() % 10);
     }
 
     // run the program as long as the window is open
@@ -34,17 +33,18 @@ int main()
 	  if (event.type == sf::Event::Closed)
                 window.close();
         }
-
+    for (int n = 0; n < Fishes.size(); n++){
 	    Fishes[n].setPosition(x, y+=1);
             Fishes[n].rotate(1);
-
+    }
             // clear the window with black color
-            window.clear(sf::Color::Black);
+    window.clear(sf::Color::White);
 
             // draw everything here...
             // window.draw(...);
+	        for (int n = 0; n < Fishes.size(); n++){
             window.draw(Fishes[n]);
-
+		}
             // end the current frame
             window.display();
         }
