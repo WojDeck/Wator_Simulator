@@ -1,27 +1,46 @@
 #include <SFML/Graphics.hpp>
+const int Fish_Number = 50;
+const int Fish = 1;
+const int Shark_Number = 25;
+const int Fish_Breed = 10;
+const int Shark_Breed = 10;
+const int Shark_Starve = -1;
+const int starve = 20;
+const int water = 0;
+const int Water_Width = 160;
+const int Water_Height = 160;
+int x, y;
+int WATER[Water_Width][Water_Height];
 
-int n;
-int x;
-int y;
-int main()
-{
-  int n;
-int x;
-int y;
- sf::RenderWindow window(sf::VideoMode(800, 800), "SFML works!");
-  
-    window.setFramerateLimit(30);
 
-    srand(time(0));
+ sf::RenderWindow window(sf::VideoMode(800, 800), "Wator Simulator!");
+sf::RectangleShape OceanRec;
+OceanRec.setSize(sf::Vector2F(5,5));
+OceanRec.setFillColor(sf::Color::Blue);
 
-    sf::Texture shark;
-    shark.loadFromFile("image.png");
-    std::vector<sf::Sprite> Fishes(n,sf::Sprite(shark));
-    for (int i = 0; i < Fishes.size(); i++){
-        Fishes[n].setOrigin(15, 15);
-        Fishes[n].getPosition();
-        Fishes[n].setPosition(x = rand() % 790 + 10, y = rand() % -10 - 50);
+/*
+ *spawn a fish a at random position
+ *
+ */
+void addFish() {
+    for (int i = 0; i < Fish_Number; ++i) {
+        y = rand() % Water_Width;
+        x = rand() % Water_Height;
+        water[y][x] = Fish;
+        Rec[Water_Width*y+x].setFillColor(sf::Color::Green);
     }
+}
+void drawOcean()
+{
+    // draw the Cells
+    for (int i = 0; i < Water_Width*Water_Height; ++i)
+    {
+        window.draw(OceanRec[i]);
+    }
+}
+int main(){
+  
+
 
     // run the program as long as the window is open
     while (window.isOpen())
@@ -35,15 +54,13 @@ int y;
                 window.close();
             }
 
-	    Fishes[n].setPosition(x, y+=1);
-            Fishes[n].rotate(1);
-
-            // clear the window with black color
             window.clear(sf::Color::Black);
 
             // draw everything here...
             // window.draw(...);
-            window.draw(Fishes[n]);
+	    drawOcean();
+	    addFish();
+            //window.draw();
 
             // end the current frame
             window.display();
