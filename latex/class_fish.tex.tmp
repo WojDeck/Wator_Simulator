@@ -1,0 +1,31 @@
+\hypertarget{class_fish}{}\section{Fish Class Reference}
+\label{class_fish}\index{Fish@{Fish}}
+
+
+Inheritance diagram for Fish\+:
+% FIG 0
+
+
+Collaboration diagram for Fish\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void {\bfseries reset} ()\hypertarget{class_fish_a4c317845a65961bb0925ef4460f2dbb0}{}\label{class_fish_a4c317845a65961bb0925ef4460f2dbb0}
+
+\item 
+bool {\bfseries Fish\+Reproduction} ()\hypertarget{class_fish_ab6f239027f5dd02df6f4002e8c28cbbc}{}\label{class_fish_ab6f239027f5dd02df6f4002e8c28cbbc}
+
+\item 
+int {\bfseries get\+Reproduction} ()\hypertarget{class_fish_ac092d325aebcb31e41e14709afa2a983}{}\label{class_fish_ac092d325aebcb31e41e14709afa2a983}
+
+\item 
+void {\bfseries increase\+Reproduction} ()\hypertarget{class_fish_a973ed2c5cb5b8d55d77f7df5afa4788b}{}\label{class_fish_a973ed2c5cb5b8d55d77f7df5afa4788b}
+
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+wator.\+cpp\end{DoxyCompactItemize}
